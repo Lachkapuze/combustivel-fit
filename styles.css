@@ -96,3 +96,28 @@ ul.clean li{display:flex;justify-content:space-between;border-bottom:1px dashed 
     height: 48px !important;
   }
 }
+
+@media (min-width: 769px){
+  .whatsapp-fab{
+    position: fixed !important;
+    right: 18px !important;
+    bottom: 18px !important;
+    width: 56px !important;
+    height: 56px !important;
+    padding: 0 !important;
+    background: transparent !important; /* use #25D366 se seu PNG for só o glifo */
+    border-radius: 999px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 10000 !important;
+    box-shadow: 0 10px 24px rgba(0,0,0,.18), 0 6px 12px rgba(0,0,0,.12) !important;
+  }
+  .whatsapp-fab .whats-icon{
+    width: 100% !important;   /* 56 x 56 */
+    height: 100% !important;
+    max-width: none !important;  /* evita regras globais tipo img{max-width:100%} */
+    object-fit: contain !important;
+    border-radius: 999px !important;
+  }
+}
