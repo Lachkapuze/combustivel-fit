@@ -44,3 +44,48 @@ a.btn.outline{color:#0ea5e9;background:#fff}
 ul.clean{list-style:none;padding:0;margin:0}
 ul.clean li{display:flex;justify-content:space-between;border-bottom:1px dashed #e2e8f0;padding:6px 0}
 .badge .muted{font-size:12px;color:#64748b}
+
+.whatsapp-fab {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #25D366;
+  color: #0a0a0a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18), 0 6px 12px rgba(0,0,0,.12);
+  text-decoration: none;
+  z-index: 10000;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .2s ease;
+}
+.whatsapp-fab:hover,
+.whatsapp-fab:focus {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,.22), 0 8px 16px rgba(0,0,0,.16);
+  outline: none;
+}
+.whatsapp-fab::after {
+  content: 'Fale no WhatsApp';
+  position: absolute;
+  right: 64px;
+  bottom: 50%;
+  transform: translateY(50%);
+  background: #111827;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+.whatsapp-fab:hover::after { opacity: 1; }
+
+@media (max-width: 420px) {
+  .whatsapp-fab { right: 14px; bottom: 14px; }
+}
