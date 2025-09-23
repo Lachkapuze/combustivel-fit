@@ -45,13 +45,27 @@ ul.clean{list-style:none;padding:0;margin:0}
 ul.clean li{display:flex;justify-content:space-between;border-bottom:1px dashed #e2e8f0;padding:6px 0}
 .badge .muted{font-size:12px;color:#64748b}
 
-.whatsapp-fab{
-  position:fixed; right:18px; bottom:18px; width:56px; height:56px;
-  background:transparent; padding:0; border-radius:999px;
-  display:inline-flex; align-items:center; justify-content:center;
-  box-shadow:0 10px 24px rgba(0,0,0,.18), 0 6px 12px rgba(0,0,0,.12);
-  text-decoration:none; z-index:10000; transition:transform .15s ease, box-shadow .15s ease;
+@media (max-width: 768px){
+  .whatsapp-fab {
+    position: fixed !important;
+    right: 14px;   /* distância da lateral */
+    bottom: 14px;  /* distância do rodapé */
+    width: 52px;   /* tamanho do botão */
+    height: 52px;
+  }
+
+  .whatsapp-fab .whats-icon {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain;  /* mantém proporção */
+  }
 }
-.whats-icon{ width:56px; height:56px; display:block; border-radius:999px; }
-.whatsapp-fab:hover,.whatsapp-fab:focus{ transform:translateY(-1px) scale(1.03); box-shadow:0 12px 28px rgba(0,0,0,.22), 0 8px 16px rgba(0,0,0,.16); }
-@media (max-width:420px){ .whatsapp-fab{ right:14px; bottom:14px; } }
+
+@media (max-width: 420px){
+  .whatsapp-fab {
+    width: 48px;   /* menor ainda em telas muito pequenas */
+    height: 48px;
+    right: 12px;
+    bottom: 12px;
+  }
+}
