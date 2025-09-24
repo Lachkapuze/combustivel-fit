@@ -1,87 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CFIT – Perfil e Avaliações | Caucaia do Alto</title>
-  <meta name="description" content="Conheça a CFIT – Combustível Fit em Caucaia do Alto: marmitas fitness acessíveis, de qualidade, com avaliações reais no Google. Peça pelo WhatsApp." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <meta property="og:title" content="CFIT – Perfil e Avaliações | Caucaia do Alto" />
-  <meta property="og:description" content="Marmitas fitness acessíveis, saborosas e feitas com cuidado. Veja avaliações e peça agora pelo WhatsApp." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content=".logo.png" />
-  <meta name="theme-color" content="#ff5a1f" />
-  <style>
-    :root{ --brand:#ff5a1f; --brand-700:#cc481b; --border:#eaeaea; --text:#0f0f0f; --muted:#6b6b6b; --bg:#ffffff }
-    *{ box-sizing:border-box }
-    body{ margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif; color:var(--text); background:var(--bg) }
-    a{ color:inherit }
-    .wrap{ max-width:1120px; margin:0 auto; padding:22px }
-    header{ display:flex; align-items:center; justify-content:space-between; gap:16px }
-    .logo{ display:flex; align-items:center; gap:10px; text-decoration:none }
-    .logo img{ height:40px; width:auto; display:block }
-    .logo-name{ font-weight:800; letter-spacing:.4px }
-    nav{ display:flex; gap:14px; flex-wrap:wrap }
-    nav a{ text-decoration:none; padding:10px 12px; border-radius:10px; border:1px solid transparent }
-    nav a:hover{ border-color:var(--border) }
-    .cta{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; background:linear-gradient(135deg,var(--brand),#ff7a3f); color:#fff; padding:12px 14px; border-radius:12px }
-
-    .hero{ margin:18px auto 6px; display:grid; grid-template-columns:1fr; gap:16px; align-items:center }
-    .hero-card{ border:1px solid var(--border); border-radius:18px; padding:20px; background:#fff }
-    .badge{ display:inline-block; background:rgba(255,90,31,.08); border:1px solid rgba(255,90,31,.25); color:var(--brand-700); padding:6px 10px; border-radius:999px; font-size:12px; font-weight:700; letter-spacing:.3px; text-transform:uppercase }
-    h1{ font-size:clamp(24px,4vw,40px); margin:10px 0 6px; line-height:1.12 }
-    .sub{ color:var(--muted); margin:0 0 10px }
-    .rating{ display:flex; align-items:center; gap:10px; margin:10px 0 0 }
-    .stars{ color:#f8b84e; font-size:18px; letter-spacing:1px }
-    .stat{ color:var(--muted); font-weight:600 }
-
-    .grid-3{ display:grid; grid-template-columns:repeat(12,1fr); gap:16px; margin-top:16px }
-    .card{ grid-column:span 12; border:1px solid var(--border); border-radius:16px; padding:18px; background:#fff }
-    @media(min-width:860px){ .hero{ grid-template-columns:1.2fr .8fr } .card.col-4{ grid-column:span 4 } }
-
-    .rev-list{ display:grid; grid-template-columns:repeat(12,1fr); gap:14px }
-    .rev{ grid-column:span 12; border:1px solid var(--border); border-radius:14px; padding:14px; background:#fff }
-    .rev .who{ font-weight:700 }
-    .rev .stars{ font-size:16px }
-    .rev .when{ color:var(--muted); font-size:12px }
-    @media(min-width:860px){ .rev{ grid-column:span 6 } }
-
-    .map iframe{ width:100%; height:360px; border:0; border-radius:16px }
-
-    .faq details{ border:1px solid var(--border); border-radius:14px; padding:12px 14px; background:#fff }
-    .faq details+details{ margin-top:10px }
-    .faq summary{ font-weight:700; cursor:pointer }
-
-    footer{ margin:28px 0 14px; text-align:center; color:var(--muted); font-size:13px }
-
-    /* Botão flutuante WhatsApp no mobile (não interfere no desktop) */
-    .wa-float{ position:fixed; right:14px; bottom:14px; display:none; width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--brand),#ff7a3f); color:#fff; align-items:center; justify-content:center; font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.18); z-index:50 }
-    @media(max-width:720px){ .wa-float{ display:flex } }
-      /* Evita qualquer flicker de logo/título nesta página */
-    header, .logo, .logo *{animation:none !important; transition:none !important}
-    .logo-img{display:block;width:40px;height:40px}
-    .logo-img img{display:block;width:40px;height:40px}
-</style>
-  <script>
-    // Título estável nesta página (evita scripts globais alterando a aba)
-    document.addEventListener('DOMContentLoaded', function(){
-      document.title = 'CFIT – Perfil e Avaliações | Caucaia do Alto';
-      if (window.__titleInterval) try{ clearInterval(window.__titleInterval); }catch(e){}
-      // Desativa listeners de visibilitychange que possam trocar o title
-      document.addEventListener('visibilitychange', function(e){ e.stopImmediatePropagation && e.stopImmediatePropagation(); }, true);
-    });
-  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Combustível Fit</title>
+  <meta name="description" content="Marmitas fit congeladas em Cotia e região.">
+  <link rel="icon" href="assets/Logo.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="wrap">
-<header>
-  <a class="logo" href="./" aria-label="Voltar para a página inicial CFIT">
-    <img src="./logo.png" alt="CFIT" width="42" height="42" decoding="async" loading="eager" />
-    <span class="logo-name">CFIT</span>
-  </a>
-</header>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="Logo.png" alt="Combustível Fit">
+        <div>
+          <div class="title">Combustível Fit</div>
+          <div class="small">Comida de verdade, todo dia.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <a class="btn outline" href="#cardapios">Cardápios</a>
+        <a class="btn" href="https://wa.me/5511971761042?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Combust%C3%ADvel%20Fit.%20Quero%20ver%20os%20card%C3%A1pios%20e%20fazer%20um%20pedido." id="wa-btn" data-base="https://wa.me/5511971761042?text=">Pedir no WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
 
     <section class="hero">
       <div class="hero-card">
