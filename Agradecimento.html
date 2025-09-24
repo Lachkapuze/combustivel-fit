@@ -43,14 +43,28 @@
     .stripe .text{width:100%;text-align:center;padding:14px;background:rgba(0,0,0,.06)}
 
     footer{margin:26px 0 8px;text-align:center;color:var(--muted);font-size:13px}
-  </style>
+    .logo-img{display:block;width:42px;height:42px}
+    .logo-img img{display:block;width:42px;height:42px}
+    /* Evita animações/acelerações que possam causar flicker */
+    header, .logo, .logo *{animation:none !important; transition:none !important}
+</style>
+  <script>
+    // Garante título estável nesta página (evita scripts globais alterando a aba)
+    document.addEventListener('DOMContentLoaded', function(){
+      document.title = 'Obrigado! | CFIT – Combustível Fit';
+      if (window.__titleInterval) try{ clearInterval(window.__titleInterval); }catch(e){}
+    });
+  </script>
 </head>
 <body>
   <div class="wrap">
     <header>
       <a class="logo" href="./" aria-label="Voltar para a página inicial CFIT">
-        <!-- Use o mesmo arquivo de logo do site principal -->
-        <img src="img/cfit-logo.svg" onerror="this.src='img/cfit-logo.png'" alt="CFIT – Combustível Fit" />
+        <!-- Fallback sem piscada: usa <picture> com SVG e PNG; sem onerror -->
+        <picture class="logo-img">
+          <source srcset="./img/cfit-logo.svg" type="image/svg+xml" />
+          <img src="./img/cfit-logo.png" alt="CFIT" width="42" height="42" decoding="async" loading="eager" />
+        </picture>
         <span class="logo-name">CFIT</span>
       </a>
     </header>
