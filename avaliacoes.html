@@ -59,14 +59,30 @@
     /* Botão flutuante WhatsApp no mobile (não interfere no desktop) */
     .wa-float{ position:fixed; right:14px; bottom:14px; display:none; width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--brand),#ff7a3f); color:#fff; align-items:center; justify-content:center; font-weight:800; box-shadow:0 10px 20px rgba(0,0,0,.18); z-index:50 }
     @media(max-width:720px){ .wa-float{ display:flex } }
-  </style>
+      /* Evita qualquer flicker de logo/título nesta página */
+    header, .logo, .logo *{animation:none !important; transition:none !important}
+    .logo-img{display:block;width:40px;height:40px}
+    .logo-img img{display:block;width:40px;height:40px}
+</style>
+  <script>
+    // Título estável nesta página (evita scripts globais alterando a aba)
+    document.addEventListener('DOMContentLoaded', function(){
+      document.title = 'CFIT – Perfil e Avaliações | Caucaia do Alto';
+      if (window.__titleInterval) try{ clearInterval(window.__titleInterval); }catch(e){}
+      // Desativa listeners de visibilitychange que possam trocar o title
+      document.addEventListener('visibilitychange', function(e){ e.stopImmediatePropagation && e.stopImmediatePropagation(); }, true);
+    });
+  </script>
 </head>
 <body>
   <div class="wrap">
     <header>
       <a class="logo" href="./">
         <!-- Mantém o mesmo logo do site principal -->
-        <img src="./img/cfit-logo.svg" onerror="this.src='./img/cfit-logo.png'" alt="CFIT" />
+        <picture class="logo-img">
+          <source srcset="./img/cfit-logo.svg" type="image/svg+xml" />
+          <img src="./img/cfit-logo.png" alt="CFIT" width="40" height="40" decoding="async" loading="eager" />
+        </picture>
         <span class="logo-name">CFIT</span>
       </a>
       <nav>
