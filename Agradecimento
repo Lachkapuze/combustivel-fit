@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Obrigado! | CFIT – Combustível Fit</title>
+  <meta name="description" content="Obrigado pela preferência! Marmitas CFIT: sabor, saúde e praticidade ao seu alcance." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand:#ff5a1f; /* laranja CFIT */
+      --brand-700:#cc481b;
+      --text:#0f0f0f;
+      --muted:#5a5a5a;
+      --border:#e9e9e9;
+      --bg:#ffffff; /* fundo claro como no site principal */
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;gap:14px}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+    .logo img{height:42px;width:auto;display:block}
+    .logo-name{font-weight:800;letter-spacing:.4px}
+
+    .card{margin:28px auto 0;max-width:840px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:#fff}
+    .hero{padding:42px 26px;text-align:center}
+    .badge{display:inline-block;background:rgba(255,90,31,.08);border:1px solid rgba(255,90,31,.25);color:var(--brand-700);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.3px;text-transform:uppercase}
+    h1{margin:14px 0 8px;font-size:clamp(26px,3.6vw,38px);line-height:1.12}
+    p.lead{margin:0 auto;max-width:720px;color:var(--muted);font-size:clamp(14px,2.2vw,16px)}
+
+    .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;padding:0 22px 36px}
+    .btn{appearance:none;border:none;cursor:pointer;padding:14px 18px;border-radius:12px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:10px}
+    .primary{background:linear-gradient(135deg,var(--brand),#ff7a3f);color:#fff}
+    .primary:hover{filter:brightness(1.03)}
+    .ghost{background:#fff;color:var(--text);border:1px solid var(--border)}
+    .ghost:hover{background:#f7f7f7}
+
+    .stripe{border-top:1px solid var(--border);}
+    .stripe .text{width:100%;text-align:center;padding:14px;background:rgba(0,0,0,.06)}
+
+    footer{margin:26px 0 8px;text-align:center;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="logo" href="./" aria-label="Voltar para a página inicial CFIT">
+        <!-- Use o mesmo arquivo de logo do site principal -->
+        <img src="img/cfit-logo.svg" onerror="this.src='img/cfit-logo.png'" alt="CFIT – Combustível Fit" />
+        <span class="logo-name">CFIT</span>
+      </a>
+    </header>
+
+    <main class="card" role="main">
+      <section class="hero">
+        <span class="badge">Pedido confirmado</span>
+        <h1>Obrigado! Recebemos seu pedido 🔥</h1>
+        <p class="lead">Preparamos tudo com qualidade e cuidado. Em instantes você receberá a confirmação no WhatsApp.</p>
+      </section>
+
+      <div class="actions">
+        <a class="btn primary" id="whatsBtn" href="#" target="_blank" rel="noopener" aria-label="Falar com a CFIT no WhatsApp">
+          <!-- Ícone simples de WhatsApp -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.06 0C5.64 0 .44 5.2.44 11.61c0 2.05.54 4.04 1.57 5.8L0 24l6.77-1.97a11.53 11.53 0 0 0 5.3 1.35h.01c6.42 0 11.62-5.2 11.62-11.61 0-3.11-1.21-6.03-3.18-8.29Z" fill="#fff"/></svg>
+          Falar no WhatsApp
+        </a>
+        <a class="btn ghost" href="./">Voltar para a página inicial</a>
+      </div>
+
+      <div class="stripe">
+        <div class="text"><strong>Marmitas CFIT</strong> — sabor, saúde e praticidade ao seu alcance.</div>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> CFIT – Combustível Fit. Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <script>
+    // Monta link do WhatsApp com mensagem curta
+    const params = new URLSearchParams(location.search);
+    const name = params.get('nome') || params.get('name') || '';
+    const phone = '5511971761042';
+    const msg = encodeURIComponent(`Olá, sou ${name||'cliente'} e acabei de finalizar um pedido pelo site. Poderiam confirmar pra mim?`);
+    document.getElementById('whatsBtn').href = `https://wa.me/${phone}?text=${msg}`;
+
+    // Ano no rodapé
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
